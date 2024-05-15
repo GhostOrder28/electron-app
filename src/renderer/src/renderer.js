@@ -1,5 +1,5 @@
 import Konva from "konva";
-import { onMouseUp, onMouseDown, onMouseMove } from "./toolbox";
+import { onMouseUp, onMouseDown, onMouseMove } from "./tool-box";
 
 const buttonWidget = document.querySelector('.button-widget');
 const canvas = document.querySelector('#canvas');
@@ -11,8 +11,8 @@ props.forEach(p => {
 const width = canvas.offsetWidth;
 const height = canvas.offsetHeight;
 
-const stage = new Konva.Stage({
-  container: canvas,   // id of container <div>
+export const stage = new Konva.Stage({
+  container: canvas,
   width,
   height
 });
@@ -24,7 +24,7 @@ stage.add(layer)
 layer.draw()
 
 buttonWidget.addEventListener('mousedown', onMouseDown, false);
-buttonWidget.addEventListener('mouseup', function (e) {
-  onMouseUp(e, layer)
+buttonWidget.addEventListener('mouseup', function () {
+  onMouseUp(layer)
 }, false);
 buttonWidget.addEventListener('mousemove', onMouseMove, false);

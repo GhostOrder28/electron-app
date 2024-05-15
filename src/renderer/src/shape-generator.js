@@ -11,6 +11,7 @@ import {
   DEFAULT_FONT_SIZE,
 } from './consts';
 import { shapeSelector } from "./property-box";
+import { stage } from "./renderer";
 
 function shapeGenerator (currentChildrenLength) {
   const buttonGroup = new Konva.Group({
@@ -26,8 +27,6 @@ function shapeGenerator (currentChildrenLength) {
     stroke: DEFAULT_STROKE,
     strokeWidth: DEFAULT_STROKE_WIDTH,
     cornerRadius: DEFAULT_CORNER_RADIOUS,
-    // align: 'center',
-    // listening: false,
   });
 
   const buttonText = new Konva.Text({
@@ -46,6 +45,13 @@ function shapeGenerator (currentChildrenLength) {
   buttonGroup.on('click', (e) => {
     shapeSelector(e)
   })
+  buttonGroup.on('mouseenter', function () {
+    stage.container().style.cursor = 'pointer';
+  });
+  buttonGroup.on('mouseleave', function () {
+    stage.container().style.cursor = 'default';
+  });
+
 
   return buttonGroup
 };
