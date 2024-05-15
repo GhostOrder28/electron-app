@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="./assets/styles.css">
+    <title>Hello from Electron renderer!</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="toolbox">
+        <div class="button-widget">
+          <button>Button</button>
+        </div>
+      </div>
+      <div id="canvas"></div>
+      <div id="propertybox">
+        <h2>Select a shape</h2>
+        <div>
+          <div class="input-group">
+            <div>
+              <label for="width-field">Width</label>
+              <input name="width-field" type="number">
+            </div>
+            <div>
+              <label for="height-field">Height</label>
+              <input name="height-field" type="number">
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="corners-field">Corners</label>
+          <input name="corners-field" type="number">
+        </div>
+      </div>
+    </div>
+    <script src="./src/renderer.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+@import url("./fonts.css");
+
+body {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Reddit-Sans';
+}
+
+/*********** CANVAS CONTAINER **********/
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container > *:not(#canvas) {
+  background-color: #92C0E7;
+  box-shadow: 9px 10px 34px -11px rgba(0,0,0,0.28);
+  border: 1px solid #83AACA;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#toolbox {
+  position: absolute;
+  left: 30px;
+  display: flex;
+  justify-content: center;
+  width: 80px;
+  height: 300px;
+  padding: 20px;
+  z-index: 90;
+  border-radius: 10px;
+}
+
+#propertybox {
+  position: absolute;
+  right: 30px;
+  width: 200px;
+  height: 300px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#propertybox h2 {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+/**** TOOLBOX *****/
+
+.button-widget {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 40px;
+  box-shadow: 4px 4px 11px -2px rgba(0,0,0,0.22);
+  cursor: pointer;
+}
+
+.button-widget button {
+  width: 100%;
+  height: 100%;
+  background-color: #E7EDF2;
+  border: 1px solid #E1E7EC;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/****** PROPERTY BOX ******/
+#propertybox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #445665;
+}
+
+.input-group {
+  display: flex;
+  gap: 30px;
+}
+
+.input-group > * {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 100%;
+  height: 25px;
+  border: 1px solid #E1E7EC;
+  border-radius: 3px;
+}
+
+label + input {
+  margin-top: 5px;
+}
